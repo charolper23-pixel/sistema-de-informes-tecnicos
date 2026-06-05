@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="Style.css"></link>
+</head>
+<body>
+
+<h1 id="i5" style="display:none">BIENVENIDO</h1>
+
+<!-- Estructura del modal -->
+<div id="miModal" class="modal">
+  <div class="modal-contenido">
+    <span class="cerrar" style="display: none;">&times;</span>
+    <h2>Log In</h2>
+    <p id="i4">Ingrese los Datos</p>
+    <input id="i1" type="text" placeholder="Escribe el nombre">
+    <input id="i2" type="password" placeholder="Escribe la contraseña">
+    <button id="i3" class="i3">Access</button>
+  </div>
+</div>
+
+<script>
+
+const name = 'Yudith Perdomo';
+const pass = '1234';
+
+alert(name+','+pass);
+
+const modal = document.getElementById("miModal");
+const abrirBtn = document.getElementById("abrirModal");
+const cerrarSpan = document.querySelector(".cerrar");
+
+const i1 = document.getElementById("i1");
+const i2 = document.getElementById("i2");
+const i3 = document.getElementById("i3");
+const i4 = document.getElementById("i4");
+const i5 = document.getElementById("i5");
+
+i3.addEventListener('click',()=>{
+  if(i1.value === name && i2.value === pass){
+    modal.style.display = "none";
+    i5.style.display = 'flex';
+  }else{
+    i4.textContent = 'Esos no son los Datos Exactos';
+    i1.value = '',i2.value = '';
+  }
+})
+
+modal.style.display = "flex";
+
+</script>
+</body>
+</html>
